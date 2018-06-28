@@ -14,8 +14,8 @@ public class Main{
         // System.out.println(inStack.pop());
         // System.out.println(inStack.pop());
 
-        Person person1 = new Person("jason", "123");
-        Person person2 = new Person("tim", "321");
+        Person person1 = new Person("jason", "25");
+        Person person2 = new Person("tim", "30");
 
         PersonStack stack = new PersonStack();
 

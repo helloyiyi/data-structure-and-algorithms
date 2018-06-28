@@ -15,9 +15,9 @@ public class Main{
         list.sortList();
         //list.printList();
 
-        Person person1 = new Person("yiyi","123");
-        Person person2 = new Person("xiaoxi","456");
-        Person person3 = new Person("abccc","789");
+        Person person1 = new Person("yiyi","18");
+        Person person2 = new Person("xiaoxi","20");
+        Person person3 = new Person("abccc","30");
         PersonLinkedList personList = new PersonLinkedList(person1);
         personList.insertItemFirst(person2);
         personList.insertItemLast(person3);
