@@ -21,9 +21,8 @@ public class Main{
 
         // stack.push(person1);
         // stack.push(person2);
-
-        // // System.out.println(stack.pop().toString());
-        // // System.out.println(stack.pop().toString());
+        // System.out.println(stack.pop().toString());
+        // System.out.println(stack.pop().toString());
 
     }
 }
