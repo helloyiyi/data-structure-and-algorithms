@@ -6,6 +6,7 @@ public class BinarySearchTree{
         root = null;
     }
 
+    // I defined the rule to be the length of person name string
     public boolean insert(Person person){
         Node n = new Node();
         n.data = person;
@@ -20,14 +21,14 @@ public class BinarySearchTree{
         Node c = root;
         while(c!=null){
             p = c;
-            if(person.getName().compareTo(c.data.getName())<0){   
+            if(person.getName().length()<=c.data.getName().length()){   
                 c = c.lc;             
             }else{
                 c = c.rc;
             }
         }
 
-        if(person.getName().compareTo(p.data.getName())<0){
+        if(person.getName().length() <= p.data.getName().length()){
             p.lc = n;
         }else{
             p.rc = n;
@@ -39,9 +40,12 @@ public class BinarySearchTree{
     public Node findNode(String key){
         Node c  = root;
         while(c!=null){
-            if(key.compareTo(c.data.getName()) == 0){
+            if(key.length() == c.data.getName().length()){
+                while(!key.equals(c.data.getName())){
+                    c = c.lc;
+                }
                 break;
-            }if(key.compareTo(c.data.getName())<0){
+            }if(key.length() < c.data.getName().length()){
                 c = c.lc;
             }else{
                 c = c.rc;
@@ -55,17 +59,28 @@ public class BinarySearchTree{
         Node p = root;
         Node c = root;
         do {
-            if(childKey.compareTo(c.data.getName())==0){
-                break;
+            if(childKey.length()== c.data.getName().length()){
+                // since support the same length of string to be added as left child, 
+                //then when the length is the same, compare with the real string, 
+                //if not the same, the parent should be current c
+                while(c!=null){                   
+                    if(!childKey.equals(c.data.getName())){
+                        c = c.lc;
+                        System.out.println("current c = "+c.data.getName());
+                    } 
+                    p = c;
+                    break;                 
+                }
+                break; 
+
             }
             p = c;
-            if(childKey.compareTo(c.data.getName())<0){
+            if(childKey.length()<c.data.getName().length()){
                 c = c.lc;
             }else{
                 c = c.rc;
             }
         } while (c!=null);
-        System.out.println(">>"+p.data.getName());
         if(c!=null){
             return p;
         }else{
