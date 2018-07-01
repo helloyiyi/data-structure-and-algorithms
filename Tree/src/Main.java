@@ -12,15 +12,22 @@ public class Main{
         bst.insert(person3);
         bst.insert(person4);
         bst.insert(person5);
-        bst.showAll(bst.findNode("22"));
+        //bst.showAll(bst.findNode("22"));
 
         //System.out.println(bst.getData( bst.findParent("1")));
         //System.out.println(bst.getData( bst.findParent("22")));
         // System.out.println(bst.getData( bst.findParent("333")));
-        System.out.println(bst.getData( bst.findParent("333")));
+        //System.out.println(bst.getData( bst.findParent("333")));
         // System.out.println(bst.getData( bst.findParent("55555")));
        
+        Trie t = new Trie();
+        t.insert("hello");
+        t.insert("hel");
+        t.insert("abandon");
+        System.out.println(t.search("hel"));
 
-
+        t.delete("hello");
+        System.out.println(t.search("hel"));
+        System.out.println(t.search("hello"));
     }
 }
