@@ -1,11 +1,5 @@
 public class IntLinkedList{
-    private Node head;
-
-    public IntLinkedList(){
-        head = new Node();
-        head.value = 0;
-        head.link = null;
-    }
+    public Node head;
 
     public boolean insertItemFirst(int item){
         Node n = new Node();
@@ -30,7 +24,7 @@ public class IntLinkedList{
     public void printList(){
         Node z = head;
         while(z!=null){
-            System.out.println(z.value);
+            System.out.print(z.value +" >> ");
             z = z.link;
         }
     }
@@ -75,6 +69,37 @@ public class IntLinkedList{
             }
             a = a.link;
         }
+    }
+
+    public boolean isInThisList(Node n, int value){
+        while(n!=null){
+            if (n.value == value){
+                return true;
+            }
+            n = n.link;
+        }
+        return false;
+    }
+
+
+    public IntLinkedList getIntersection(Node head1, Node head2)
+    {
+        IntLinkedList result = new IntLinkedList();
+        result.printList();
+        Node t1 = head1;
+ 
+        // Traverse list1 and search each element of it in list2.
+        // If the element is present in list 2, then insert the
+        // element to result
+        while (t1 != null)
+        {
+            if (isInThisList(head2, t1.value)){
+                System.out.println("lalalalala "+t1.value);
+                result.insertItemFirst(t1.value);
+            }
+            t1 = t1.link;
+        }
+        return result;
     }
 
     class Node{
