@@ -22,5 +22,22 @@ public class Main{
         personList.insertItemFirst(person2);
         personList.insertItemLast(person3);
         personList.printList();
+
+
+        IntLinkedList list1 = new IntLinkedList();
+        list1.insertItemFirst(3);
+        list1.insertItemFirst(8);
+        list1.insertItemFirst(9);
+        list1.insertItemFirst(4);
+
+        IntLinkedList list2 = new IntLinkedList();
+        list2.insertItemFirst(5);
+        list2.insertItemFirst(8);
+        list2.insertItemFirst(4);
+
+        IntLinkedList i = new IntLinkedList();
+        i.getIntersection(list1.head, list2.head).printList();
     }
+
+
 }
