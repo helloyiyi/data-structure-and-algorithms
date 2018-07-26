@@ -6,14 +6,13 @@ public class Main{
         list.insertItemFirst(4);
         //list.printList();
 
-        list.deleteItem(5);
-        //list.printList();
+        list.deleteItemNotBubble(5);
+        list.printList();
 
         list.insertItemLast(9);
         //list.printList();
 
         list.sortList();
-        //list.printList();
 
         Person person1 = new Person("yiyi","18");
         Person person2 = new Person("xiaoxi","20");
@@ -21,7 +20,7 @@ public class Main{
         PersonLinkedList personList = new PersonLinkedList(person1);
         personList.insertItemFirst(person2);
         personList.insertItemLast(person3);
-        personList.printList();
+        //personList.printList();
 
 
         IntLinkedList list1 = new IntLinkedList();
@@ -36,7 +35,7 @@ public class Main{
         list2.insertItemFirst(4);
 
         IntLinkedList i = new IntLinkedList();
-        i.getIntersection(list1.head, list2.head).printList();
+        //i.getIntersection(list1.head, list2.head).printList();
     }
 
 

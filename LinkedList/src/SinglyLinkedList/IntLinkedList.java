@@ -53,6 +53,31 @@ public class IntLinkedList{
         }
     }
 
+    
+    public boolean deleteItemNotBubble(int item){
+        if(head.value == item){
+            head = head.link;
+            return true;
+        }else{
+            Node temp = head;
+            while(temp.link!=null){
+                if(temp.value==item){
+                    temp.value = temp.link.value;
+                    temp.link = temp.link.link;
+                    return true;
+                }
+                if(temp.link.link==null){
+                    if(temp.link.value == item){
+                        temp.link = null;
+                        return true;
+                    }
+                }
+                temp = temp.link;
+            }
+        }
+        return false;
+    }
+
     // bubble sorting algorithm
     public void sortList(){
         int c = 0;

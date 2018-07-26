@@ -19,6 +19,7 @@ public class BinarySearchTree{
 
         Node p = root;
         Node c = root;
+        // find the node to add new node to 
         while(c!=null){
             p = c;
             if(person.getName().length()<=c.data.getName().length()){   
@@ -28,6 +29,7 @@ public class BinarySearchTree{
             }
         }
 
+        // determine add to be left or right child of this node
         if(person.getName().length() <= p.data.getName().length()){
             p.lc = n;
         }else{

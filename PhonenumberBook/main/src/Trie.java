@@ -26,6 +26,7 @@ public class Trie {
         // search from the trie to see if this phone number already exists
         if(!search(number)){        
             for(int i =0;i<length;i++){
+                // find sub nodes by using the char
                 Node child = current.findSubNode(number.charAt(i));
                 if(child!=null){
                     current = child;
